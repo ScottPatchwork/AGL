@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6kqiexm3l6je"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_56mb6"]
+[ext_resource type="Texture2D" uid="uid://h64fdl5hgg8f" path="res://Assets/Main/Art/PlaceholderAGL.png" id="2_4w4a1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gj78"]
+size = Vector2(12, 15)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ud6jx"]
+light_mode = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7a60c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4w4a1")
+}],
+"loop": true,
+"name": &"Test",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_56mb6")
+
+[node name="Col" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3gj78")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+z_index = 5
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_ud6jx")
+sprite_frames = SubResource("SpriteFrames_7a60c")
+animation = &"Test"
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)

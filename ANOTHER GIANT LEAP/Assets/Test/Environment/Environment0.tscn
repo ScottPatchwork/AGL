@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://btlxugnb32h8v"]
+
+[ext_resource type="Texture2D" uid="uid://dhnrnlg63qti4" path="res://Assets/Test/Test_Board.png" id="1_01hw0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w2t66"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pflv0"]
+size = Vector2(20, 1024)
+
+[node name="Environment" type="Node2D"]
+
+[node name="TestBoard" type="Sprite2D" parent="."]
+position = Vector2(584, 330)
+texture = ExtResource("1_01hw0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_w2t66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(62, 330)
+shape = SubResource("RectangleShape2D_pflv0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1106, 330)
+shape = SubResource("RectangleShape2D_pflv0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(914, -254)
+rotation = 1.5708
+physics_material_override = SubResource("PhysicsMaterial_w2t66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(62, 330)
+shape = SubResource("RectangleShape2D_pflv0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1106, 330)
+shape = SubResource("RectangleShape2D_pflv0")

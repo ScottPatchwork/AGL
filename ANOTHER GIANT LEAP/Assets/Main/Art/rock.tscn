@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba6x3p58jt605"]
+
+[ext_resource type="Texture2D" uid="uid://b6qd8ytf4rs5n" path="res://Assets/Main/Art/AGLRock.png" id="1_g56sb"]
+[ext_resource type="Texture2D" uid="uid://b4u7j5skx8b1c" path="res://Assets/Main/Art/Normals/AGLRock_n.png" id="2_w1s30"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w5xeq"]
+diffuse_texture = ExtResource("1_g56sb")
+normal_texture = ExtResource("2_w1s30")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lq8ny"]
+size = Vector2(23, 28)
+
+[node name="Rock" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
+texture = SubResource("CanvasTexture_w5xeq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+z_index = 5
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_lq8ny")
