@@ -3,6 +3,9 @@ var speed = 100
 var speed_default = speed
 var sprint = 150
 var dodge = 100
+
+@export var inv = Inv
+
 func _physics_process (delta):
 	player_movement (delta)
 

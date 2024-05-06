@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b6kqiexm3l6je"]
+[gd_scene load_steps=8 format=3 uid="uid://b6kqiexm3l6je"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_56mb6"]
 [ext_resource type="Texture2D" uid="uid://h64fdl5hgg8f" path="res://Assets/Main/Art/PlaceholderAGL.png" id="2_4w4a1"]
+[ext_resource type="Resource" uid="uid://bugmbeff8g303" path="res://Assets/Main/Inventory/InvMain.tres" id="2_320cl"]
+[ext_resource type="PackedScene" uid="uid://4esthc18t7rs" path="res://Assets/Main/Inventory/inv_ui.tscn" id="4_4h4kg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gj78"]
 size = Vector2(12, 15)
@@ -22,6 +24,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_56mb6")
+inv = ExtResource("2_320cl")
 
 [node name="Col" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -36,3 +39,5 @@ animation = &"Test"
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(10, 10)
+
+[node name="Inv_UI" parent="." instance=ExtResource("4_4h4kg")]

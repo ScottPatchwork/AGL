@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://bugmbeff8g303"]
+
+[ext_resource type="Resource" uid="uid://uyqxm7ejy8nn" path="res://Assets/Main/Inventory/Shroom.tres" id="1_6e2vp"]
+[ext_resource type="Script" path="res://Inventory.gd" id="1_e5taa"]
+
+[resource]
+script = ExtResource("1_e5taa")
+items = Array[Resource("res://Inventory_Item.gd")]([ExtResource("1_6e2vp"), null, null, null, ExtResource("1_6e2vp"), null, null, ExtResource("1_6e2vp"), null, null, null])
